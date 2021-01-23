@@ -1,0 +1,106 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "tsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-useless-constructor": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["off"],
+        "max-len": ["error", {
+            "code": 120
+        }],
+        "@typescript-eslint/no-useless-constructor": "error",
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".tsx", ".ts"]
+            }
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            "error",
+            {
+                "assert": "either"
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "jsx-a11y/anchor-is-valid": 0
+    },
+    "settings": {
+        "import/extensions": [".tsx", ".ts"],
+        "import/parsers": {
+            "@typescript-eslint/parser": [".tsx", ".ts"]
+        },
+        "import/resolvers": {
+            "node": {
+                "extensions": [".tsx", ".ts"]
+            }
+        },
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    },
+    "overrides": [{
+            "files": ["**/*.spec.tsx", "**/*.spec.ts"],
+            "env": {
+                "jest": true, // now **/*.test.js files" env has both es6 *and* jest
+                "browser": true
+            },
+            // Can"t extend in overrides: https://github.com/eslint/eslint/issues/8813
+            // "extends": ["plugin:jest/recommended"]
+            "plugins": ["jest"],
+            "rules": {
+                "jest/no-disabled-tests": "error",
+                "jest/prefer-to-be-null": "error",
+                "jest/prefer-to-contain": "error",
+                "jest/no-focused-tests": "error",
+                "jest/no-identical-title": "error",
+                "jest/prefer-to-have-length": "error",
+                "jest/valid-expect": "error",
+                "import/no-extraneous-dependencies": "off"
+            }
+        },
+        {
+            "files": ["**/*.stories.tsx", "**/*.stories.ts"],
+            "rules": {
+                "import/no-extraneous-dependencies": "off"
+            }
+        },
+        {
+            "files": ["**/*.tsx"],
+            "rules": {
+                "react/prop-types": "off"
+            }
+        }
+    ]
+}
