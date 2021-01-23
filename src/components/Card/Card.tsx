@@ -19,7 +19,7 @@ const Card: FC<CardProps> = (props) => {
         <img
           src={image}
           className="card-img-top"
-          alt=""
+          alt="card"
         />
       </div>
       <div className="card-body">
