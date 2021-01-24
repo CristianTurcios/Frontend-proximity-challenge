@@ -2,11 +2,22 @@
 
 ## Live Demo
 
-you can see a live demo on site [here](https://reverent-williams-8e90c8.netlify.app/).
+you can see a live demo [here](https://reverent-williams-8e90c8.netlify.app/).
 
 ## Documentation - Live Demo
 
 You can see a live demo of the documentation of the components created using storybook [here](https://peaceful-jang-0b0123.netlify.app/).
+
+## Technologies
+
+- React Redux
+- React Hooks
+- TypeScript
+- Axios
+- Bootstrap
+- Storybook
+- Jest
+- Travis CI
 
 ## Installation
 
